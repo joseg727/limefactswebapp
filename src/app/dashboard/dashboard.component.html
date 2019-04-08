@@ -1,10 +1,49 @@
-<h3>Top Facts</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let fact of facts" class="col-1-4"
-      routerLink="/detail/{{fact.id}}">
-    <div class="module hero">
-      <h4>{{fact.name}}</h4>
+<h1>LimeFacts</h1>
+  <p class="lead">Home to facts about limes since 2019.</p>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postModal">
+      Post a LimeFact!
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Your LimeFact</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="post">
+            <div class="form-group">
+              <label for="user">Username:</label>
+              <input type="text" class="form-control" id="user">
+              <label for="comment">Comment:</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button id = "submitButton" type="submit" class="btn btn-primary" onclick="getInput()">Save changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  </a>
+  </div>
+
+<!--Facts Container-->
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+  <h6 class="border-bottom border-gray pb-2 mb-0">Recent posts</h6>
+<!--Single Fact Container-->
+<!--Make highlightable under mouse hover-->
+  <div *ngFor="let fact of facts" routerLink="/detail/{{fact.id}}" class="media text-muted pt-3 text-left">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block text-gray-dark text-left">@username</strong>
+      {{fact.name}}
+    </p>
+  </div>
+  <small class="d-block text-right mt-3">
+      <a routerLink="/facts">All Posts</a>
+    </small>
 </div>
 <app-fact-search></app-fact-search>
