@@ -1,12 +1,8 @@
-<h2>Facts</h2>
+<h2>All LimeFacts</h2>
 
-<ul style="list-style-type:none" class="facts">
-  <li *ngFor="let fact of facts">
-    <a routerLink="/detail/{{fact.id}}">
-      <span class="badge">{{fact.id}}</span> {{fact.user}}
-      <div>{{fact.content}}</div>
-    </a>
-    <button class="delete" title="delete fact"
-      (click)="delete(fact)">delete</button>
-  </li>
-</ul>
+<div *ngFor="let fact of facts"  class="media text-muted pt-3 text-left">
+  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    <strong class="d-block text-gray-dark text-left">@{{fact.user}}</strong>
+    <a routerLink="/detail/{{fact.id}}">{{fact.content}}</a>
+  </p>
+</div>

@@ -38,12 +38,13 @@
   <h6 class="border-bottom border-gray pb-2 mb-0">Recent posts</h6>
 <!--Single Fact Container-->
 <!--Make highlightable under mouse hover-->
-  <div *ngFor="let fact of facts" routerLink="/detail/{{fact.id}}" class="media text-muted pt-3 text-left">
+<div *ngFor="let fact of facts"  class="media text-muted pt-3 text-left">
     <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block text-gray-dark text-left">@{{fact.user}}</strong>
-      {{fact.content}}
+      <a routerLink="/detail/{{fact.id}}">{{fact.content}}</a>
     </p>
   </div>
+  
   <small class="d-block text-right mt-3">
       <a routerLink="/facts">All Posts</a>
     </small>
