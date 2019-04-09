@@ -18,12 +18,14 @@
         <div class="modal-body">
           <form method="post">
             <div class="form-group">
-              <label for="user">Username:</label>
-              <input type="text" class="form-control" id="user">
-              <label for="comment">Comment:</label>
-              <textarea class="form-control" rows="5" id="comment"></textarea>
+              <label for="user" class="control-label">Username:</label>
+              <input type="text" class="form-control" id="usernameInput" placeholder="Enter Username" #factUser>
+              
+              <label for="comment" class="text-left">Fact:</label>
+              <textarea class="form-control" rows="5" id="contentInput" placeholder="Enter Fact" #factContent></textarea>
+
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button id = "submitButton" type="submit" class="btn btn-primary" onclick="getInput()">Save changes</button>
+              <button id = "submitButton" type="submit" class="btn btn-primary" (click)="add(factUser.value, factContent.value); factUser.value=''; factContent.value=''" data-dismiss="modal">Save changes</button>
             </div>
           </form>
         </div>
@@ -38,8 +40,8 @@
 <!--Make highlightable under mouse hover-->
   <div *ngFor="let fact of facts" routerLink="/detail/{{fact.id}}" class="media text-muted pt-3 text-left">
     <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-      <strong class="d-block text-gray-dark text-left">@username</strong>
-      {{fact.name}}
+      <strong class="d-block text-gray-dark text-left">@{{fact.user}}</strong>
+      {{fact.content}}
     </p>
   </div>
   <small class="d-block text-right mt-3">

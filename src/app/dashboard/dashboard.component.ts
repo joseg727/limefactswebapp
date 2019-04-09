@@ -18,6 +18,15 @@ export class DashboardComponent implements OnInit {
 
   getFacts(): void {
     this.factService.getFacts()
-      .subscribe(facts => this.facts = facts.slice(1, 5));
+          //is displaying new fact at end of list instead of top
+      .subscribe(facts => this.facts = facts.slice(facts.length-4, facts.length).reverse());
+  }
+
+  add(user: string, content: string): void {
+    user = user.trim();
+    content = content.trim();
+    if (!user || !content) {return; }
+    this.factService.addFact({ user, content } as Fact)
+      .subscribe(fact => {this.facts.push(fact); });
   }
 }

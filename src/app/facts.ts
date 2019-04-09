@@ -1,4 +1,5 @@
 export class Fact {
   id: number;
-  name: string;
+  user: string;
+  content: string;
 }

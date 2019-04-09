@@ -1,19 +1,10 @@
 <h2>Facts</h2>
 
-<div>
-  <label>Please enter a fact
-    <input #factName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(factName.value); factName.value=''">
-    add
-  </button>
-</div>
-
 <ul style="list-style-type:none" class="facts">
   <li *ngFor="let fact of facts">
     <a routerLink="/detail/{{fact.id}}">
-      <span class="badge">{{fact.id}}</span> {{fact.name}}
+      <span class="badge">{{fact.id}}</span> {{fact.user}}
+      <div>{{fact.content}}</div>
     </a>
     <button class="delete" title="delete fact"
       (click)="delete(fact)">delete</button>

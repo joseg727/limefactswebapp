@@ -1,10 +1,13 @@
 <div *ngIf="fact">
-<h2>{{fact.name | uppercase}} Details</h2>
+<h2>{{fact.user | uppercase}} Details</h2>
 <div><span>id: </span>{{fact.id}}</div>
 <div>
-  <label>user name:
-    <input [(ngModel)]="fact.name" placeholder="name"/>
+  <label>username:
+    <input [(ngModel)]="fact.user" placeholder="user"/>
   </label>
+  <label>content:
+      <input [(ngModel)]="fact.content" placeholder="fact"/>
+    </label>
 </div>
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>

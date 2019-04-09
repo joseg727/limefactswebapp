@@ -20,8 +20,8 @@ export class FactsComponent implements OnInit {
   add(name: string): void {
    name = name.trim();
    if (!name) {return; }
-   this.factService.addFact({ name } as Fact)
-     .subscribe(fact => {this.facts.push(fact); });
+   //this.factService.addFact({ name } as Fact)
+   //  .subscribe(fact => {this.facts.push(fact); });
   }
   delete(fact: Fact): void {
     this.facts = this.facts.filter(h => h !== fact);
