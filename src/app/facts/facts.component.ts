@@ -15,7 +15,7 @@ export class FactsComponent implements OnInit {
     this.getFacts();
   }
   getFacts(): void {
-    this.factService.getFacts() .subscribe(facts => this.facts = facts);
+    this.factService.getFacts() .subscribe(facts => this.facts = facts.reverse());
   }
   add(name: string): void {
    name = name.trim();

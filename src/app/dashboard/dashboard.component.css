@@ -1,9 +1,13 @@
 /* DashboardComponent's private CSS styles */
 
-.modal-body .form-group .control-label{
+/* Not Working */
+/* .form-group .control-label.text-left {
   text-align: left;
-}
+} */
 
+
+
+/* From tutorial */
 /*
 [class*='col-'] {
   float: start;

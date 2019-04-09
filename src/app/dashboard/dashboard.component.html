@@ -18,7 +18,7 @@
         <div class="modal-body">
           <form method="post">
             <div class="form-group">
-              <label for="user" class="control-label">Username:</label>
+              <label for="user" class="control-label text-left">Username:</label>
               <input type="text" class="form-control" id="usernameInput" placeholder="Enter Username" #factUser>
               
               <label for="comment" class="text-left">Fact:</label>
@@ -44,9 +44,8 @@
       <a routerLink="/detail/{{fact.id}}">{{fact.content}}</a>
     </p>
   </div>
-  
+
   <small class="d-block text-right mt-3">
-      <a routerLink="/facts">All Posts</a>
+      <a routerLink="/facts">View All Posts</a>
     </small>
 </div>
-<app-fact-search></app-fact-search>

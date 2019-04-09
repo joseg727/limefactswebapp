@@ -1,7 +1,7 @@
 <div id="search-component">
-  <h4>Fact Search</h4>
-
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <form class="form-inline ml-auto my-2 my-lg-0">
+    <input class="form-control mr-sm-2" id="search-box" type="text" placeholder="Search" aria-label="Search" #searchBox (input)="search(searchBox.value)">
+  </form>
 
   <ul class="search-result">
     <li *ngFor="let fact of facts$ | async" >
