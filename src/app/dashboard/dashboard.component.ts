@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
     if (!user || !content) {return; }
     this.factService.addFact({ user, content } as Fact)
       .subscribe(fact => {
+        this.facts.pop();
         this.facts.reverse();
         this.facts.push(fact);
         this.facts.reverse(); 
